@@ -1,14 +1,15 @@
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
 import React from 'react'; 
-import ReactDom from "react-dom/clien";
-
+import ReactDom from "react-dom/client";
 import 'modern-normalize'
+import App from './components/App/App.jsx'
+import { BrowserRouter } from 'react-router-dom';
 
-import App from './App.jsx'
+
 
 ReactDom.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App/>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
   </React.StrictMode>
 )

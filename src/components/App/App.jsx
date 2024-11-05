@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import Navigation from "../Navigation/Navigation";
 
-const HomePage = lazy(()=>import('../../pages/HomePage'))
+const HomePage = lazy(()=>import('../../pages/HomePage/HomePage'))
 const TravelCardsPage = lazy(()=> import('../../pages/TravelCardsPage'))
 const TravelCardDetailsPage =lazy(()=>import('../../pages/TravelCardDetailsPage'))
 const CardFeature = lazy(()=>import('../CardFeatures/CardFeatures'))

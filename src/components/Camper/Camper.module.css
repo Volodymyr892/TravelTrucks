@@ -1,0 +1,11 @@
+.buttonHeart{
+    width: 24px;
+    height: 24px;
+    background-color:white;
+    padding: 0;
+    border: none;
+
+}
+.heartFavorite{
+    color:  #d84343;
+}

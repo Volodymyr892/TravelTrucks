@@ -1,0 +1,1 @@
+export const selectCamperItems = (state) => state.camper.items;

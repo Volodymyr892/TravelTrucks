@@ -20,17 +20,17 @@ export default function TravelCardDetailsPage() {
     return (
         <div>
         <CamperDetails camper={camper}/>
-        <ul className={css.list}>
-            <li>
-                <NavLink className={css.item} to="features">Features</NavLink>
-            </li>
-            <li>
-                <NavLink className={css.item} to="reviews">Reviews</NavLink>
-            </li>
-        </ul>
-        <hr className={css.line}/>
-        <Outlet/>
-        <Form/>
+            <ul className={css.list}>
+                <li>
+                    <NavLink className={css.item} to="features">Features</NavLink>
+                </li>
+                <li>
+                    <NavLink className={css.item} to="reviews">Reviews</NavLink>
+                </li>
+            </ul>
+            <hr className={css.line}/>
+            <Outlet/>
+            <Form/>
     </div>
     )
 }

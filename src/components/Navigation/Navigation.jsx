@@ -10,10 +10,10 @@ export default function Navigation() {
         <nav className={css.container}>
         <div className={css.nav} >
             <img className={css.logo} src={logo} alt="logo"/>
-               <did className={css.navigation}>
+                <div className={css.navigation}>
                     <NavLink className={makeNavLinkClass}  to="/">Home</NavLink>
                     <NavLink className={makeNavLinkClass} to="/catalog">Catalog</NavLink>
-               </did>
+                </div>
         </div>
         </nav>
     )

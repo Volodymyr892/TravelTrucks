@@ -1,0 +1,21 @@
+.list{
+    display: flex;
+    gap: 40px;
+}
+
+  .item{
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828; 
+  }
+.line{
+        border: none; 
+      height: 2px; 
+      background-color:  #dadde1; 
+      margin-top: 24px;
+      margin-bottom: 44px;
+      /* width: 1312px; */
+      }

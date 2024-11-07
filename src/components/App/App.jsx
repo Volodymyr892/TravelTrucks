@@ -3,8 +3,8 @@ import { Suspense, lazy } from "react";
 import Navigation from "../Navigation/Navigation";
 
 const HomePage = lazy(()=>import('../../pages/HomePage/HomePage'))
-const TravelCardsPage = lazy(()=> import('../../pages/TravelCardsPage'))
-const TravelCardDetailsPage =lazy(()=>import('../../pages/TravelCardDetailsPage'))
+const TravelCardsPage = lazy(()=> import('../../pages/TracelCadsPage/TravelCardsPage'))
+const TravelCardDetailsPage =lazy(()=>import('../../pages/TravelCardDetailsPage/TravelCardDetailsPage'))
 const CardFeature = lazy(()=>import('../CardFeatures/CardFeatures'))
 const CardReviews = lazy(()=>import('../CardReviews/CardReviews'))
 const NotFoundPage = lazy(()=>import('../../pages/NotFoundPage'))

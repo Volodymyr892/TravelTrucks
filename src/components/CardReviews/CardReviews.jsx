@@ -1,7 +1,20 @@
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { selectSelectedCamper } from "../../redux/Catalog/selectors";
+import { useEffect } from "react";
+import { idCemper } from "../../redux/Catalog/operationsCatalog";
+
 export default function CardReviews() {
+    const {id} = useParams()
+    const dispatch = useDispatch()
+    const camper = useSelector(selectSelectedCamper);
+
+    useEffect(()=>{
+        dispatch(idCemper(id))
+    },[id, dispatch])
     return(
         <>
-        Тихо спадає вечірній туман, обгортаючи береги озера. Розкинуті хвилі стихають, залишаючи легкий слід від вітру на поверхні води. Вдалині видніються силуети дерев, мовчазно оберігаючи це місце від метушні зовнішнього світу. Хоч насправді природа завжди в русі, в цьому вечірньому спокої здається, що час зупинився. У повітрі відчувається свіжа прохолода, яка приносить із собою аромат вологи та трав. У такому куточку можна знайти заспокоєння та відновити сили, забувши про суєту дня.
+         
         </>
     )
 }

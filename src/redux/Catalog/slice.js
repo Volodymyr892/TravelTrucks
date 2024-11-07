@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCamper } from "./operationsCatalog";
+import { fetchCamper, idCemper } from "./operationsCatalog";
+idCemper
 
 
 const camperSlice = createSlice({
@@ -7,6 +8,7 @@ const camperSlice = createSlice({
     initialState:{
         total: 0,
         items: [],
+        idCamper:{},
         loading: false,
         error: null,
     },
@@ -18,12 +20,23 @@ const camperSlice = createSlice({
         .addCase(fetchCamper.fulfilled, (state, action)=>{
             state.loading = false;
             state.items = action.payload.items;
-            console.log("🚀 ~ .addCase ~  state.items:",  state.items)
         })
         .addCase(fetchCamper.rejected, (state, action)=>{
             state.loading = false;
             state.error = action.payload;
         })
+        .addCase(idCemper.pending, (state) => {
+            state.loading = true;
+            state.error = null;
+        })
+        .addCase(idCemper.fulfilled, (state, action) => {
+            state.loading = false;
+            state.idCamper = action.payload;
+        })
+        .addCase(idCemper.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.payload;
+        });
     }
 })
 

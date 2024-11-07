@@ -1,0 +1,11 @@
+.container {
+    width:1440px;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 64px;
+    padding-top: 48px; 
+}
+.travel{
+    display: flex;
+    gap: 54px;
+}

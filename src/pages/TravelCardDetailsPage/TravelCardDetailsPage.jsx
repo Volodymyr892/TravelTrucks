@@ -18,7 +18,7 @@ export default function TravelCardDetailsPage() {
     },[id, dispatch])
     
     return (
-        <div>
+        <div className={css.container}>
         <CamperDetails camper={camper}/>
             <ul className={css.list}>
                 <li>

@@ -4,25 +4,20 @@ import alcove from "../../assets/alcove.svg"
 import css from "./TypeVehice.module.css"
 import { useState } from "react"
 export default function TypeVehicle({onChange, selectedValues}) {
-    const [checkedItems, setCheckedItems] = useState(new Set(selectedValues))
+    const [checkedItem, setCheckedItems] = useState(selectedValues || [])
     const typeOptions = [
         { value: 'panelTruck', label: 'Van', icon: van },
         { value: 'fullyIntegrated', label: 'Fully Integrated', icon: full },
         { value: 'alcove', label: 'Alcove', icon: alcove},
       ];
-      const handleCheckboxChange = (e) => {
-        const { value, checked } = e.target;
-    
-        const newCheckedItems = new Set(checkedItems);
-        if (checked) {
-          newCheckedItems.add(value);
-        } else {
-          newCheckedItems.delete(value);
-        }
-    
-        setCheckedItems(newCheckedItems);
-        onChange(e); 
-      };
+
+      
+      const handleRadioChange = (e) => {
+        const { value } = e.target;
+        setCheckedItems(value);
+        onChange({ target: { value, checked: true } }); 
+    };
+
     return(
     <div className={css.container}>
     <h2 className={css.title}>Vehicle type</h2>
@@ -30,14 +25,12 @@ export default function TypeVehicle({onChange, selectedValues}) {
     <ul className={css.list}>
         {typeOptions.map(type=> (
             <li className={css.item} key={type.value}>
-            <label  className={`${css.label} ${
-                checkedItems.has(type.value) ? css.checked : ""
-              }`}>
+            <label className={`${css.label} ${checkedItem === type.value ? css.checked : ""}`}>
                 <input 
-                type="checkbox"
+                type="radio"
                 value={type.value}
-                onChange={handleCheckboxChange}
-                checked={checkedItems.has(type.value)}
+                onChange={handleRadioChange}
+                checked={checkedItem === type.value}
                 className={css.input}
                 />
                 <img className={css.img} src={type.icon} alt="q" />

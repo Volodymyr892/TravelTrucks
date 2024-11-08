@@ -5,6 +5,11 @@
     height: 588px;
     background-color: #f7f7f7;
 }
+.position{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 80px;
+}
 .characters{
     display: flex;
     flex-wrap: wrap;

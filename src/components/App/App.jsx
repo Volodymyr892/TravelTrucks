@@ -20,6 +20,7 @@ export default function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/catalog" element={<TravelCardsPage/>}/>
           <Route path="/catalog/:id" element={<TravelCardDetailsPage/>}>
+             <Route index element={<CardFeature />} /> {/* Це задає маршрут для Features за замовчуванням */}
              <Route path="features" element={<CardFeature/>}/>
              <Route path="reviews" element={<CardReviews/>}/>
           </Route>

@@ -7,7 +7,7 @@ import css from "./FilterList.module.css"
 export default function FilterList({onSearch}) {
     const [islocation, isSetLocation] = useState(localStorage.getItem("location") || "");
     const [isVehicle, isSetVehicle] = useState(JSON.parse(localStorage.getItem("vehicle") || "[]"));
-    const [isType, isSetType] = useState(JSON.parse(localStorage.getItem("type") || "[]"));
+    const [isType, isSetType] = useState(localStorage.getItem("type") || "");
 
     useEffect(() => {
         const hasFilters = islocation || isVehicle.length > 0 || isType.length > 0;
@@ -15,7 +15,7 @@ export default function FilterList({onSearch}) {
         if (hasFilters) {
             const savedFilters = {
                 location: islocation,
-                form: isType,
+                form: isType ? [isType] : [],
                 ...isVehicle.reduce((acc, item) => ({ ...acc, [item]: true }), {}),
             };
             onSearch(savedFilters);
@@ -27,7 +27,7 @@ export default function FilterList({onSearch}) {
     useEffect(() => {
         localStorage.setItem("location", islocation);
         localStorage.setItem("vehicle", JSON.stringify(isVehicle));
-        localStorage.setItem("type", JSON.stringify(isType));
+        localStorage.setItem("type", isType); 
     }, [islocation, isVehicle, isType]);
 
     const handleLocationChange = e => isSetLocation(e.target.value);
@@ -38,19 +38,13 @@ export default function FilterList({onSearch}) {
             checked ? [...prev, value] : prev.filter(item => item !== value)
         )
     }
-
-    const handleTypeChange = e =>{
-        const {value, checked}= e.target;
-        isSetType(
-            prev => 
-                checked ? [...prev, value] : prev.filter(item => item !== value) 
-        )
+    const handleTypeChange = e => {
+        isSetType(e.target.value); 
     }
 
     const handleSearch = ()=>{
         const hasFilters = islocation || isVehicle.length > 0 || isType.length > 0;
-        const filters = hasFilters
-            ? {
+        const filters = hasFilters ? {
                 location: islocation,
                 form: isType,
                 transmission: isVehicle.includes("transmission") ? "automatic" : undefined,
@@ -60,9 +54,7 @@ export default function FilterList({onSearch}) {
                     }
                     return acc;
                 }, {})
-            }
-            : {};
-
+            }: {};
         onSearch(filters);
     }
     return(

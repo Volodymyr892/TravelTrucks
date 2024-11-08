@@ -124,6 +124,7 @@ font-size: 16px;
 line-height: 1.5;
 letter-spacing: -0.01em;
 color: white;
+cursor: pointer;
 }
 .buttonShow:hover{
     background-color: #d84343;

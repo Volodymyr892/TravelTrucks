@@ -3,12 +3,12 @@ ul{
     padding: 0;    
 }
 .list{
-border: 1px solid  #dadde1;
-border-radius: 20px;
-padding: 24px;
-width: 888px;
-height: 368px;
-margin-bottom: 32px;
+    border: 1px solid  #dadde1;
+    border-radius: 20px;
+    padding: 24px;
+    width: 888px;
+    height: 368px;
+    margin-bottom: 32px;
 }
 .list:last-child {
     margin-bottom: 0;
@@ -21,20 +21,23 @@ margin-bottom: 32px;
     height: 56px;
     background-color: white;
     font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: -0.01em;
-color: #101828;
-display: flex;                /* Використовуємо Flexbox */
-justify-content: center;      /* Горизонтальне вирівнювання */
-align-items: center;          /* Вертикальне вирівнювання */
-text-align: center;  
-margin-top: 40px;
-margin-bottom: 50px;
-margin-left: 372px;
-cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #101828;
+    display: flex;                
+    justify-content: center;     
+    align-items: center;          
+    text-align: center;  
+    cursor: pointer;
   }
   .button:hover{
     border: 1px solid  #d84343;
   }
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 50px;             
+}

@@ -20,11 +20,11 @@
 }
 .charact{
     border-radius: 100px;
-padding: 12px 18px;
-width: auto;
-height: 48px;
-background:#f2f4f7;
-mix-blend-mode: multiply;
+    padding: 12px 18px;
+    width: auto;
+    height: 48px;
+    background:#f2f4f7;
+    mix-blend-mode: multiply;
 
 }
 .iconCharacter{
@@ -35,11 +35,11 @@ mix-blend-mode: multiply;
 .namecharacter{
     margin: 0;
     font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-text-align: center;
-color: #101828;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: #101828;
 }
 .iconCharact{
     width: 20px;
@@ -69,17 +69,17 @@ color: #101828;
 }
 .line{
     border: none; 
-  height: 2px; 
-  background-color:  #dadde1; 
-  margin: 24px 0;
-  width: 527px;
-  }
+    height: 2px; 
+    background-color:  #dadde1; 
+    margin: 24px 0;
+    width: 527px;
+}
 .titleVehicle{
     margin-top: 0;
     margin-bottom: 0;
     font-family: var(--font-family);
-font-weight: 600;
-font-size: 20px;
-line-height: 120%;
-color:  #101828;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color:  #101828;
 }

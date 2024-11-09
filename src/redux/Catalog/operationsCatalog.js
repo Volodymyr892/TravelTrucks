@@ -9,8 +9,14 @@ export const fetchCamper = createAsyncThunk(
         try {
             const params = { ...filter, limit: filter.limit || 4 }
             const response = await axios.get("/campers", {params})
+            if (response.status === 404 && response.data.length === 0) {
+                return { items: [], total: 0 };
+            }
             return response.data
         } catch (error) {
+            if (error.response && error.response.status === 404) {
+                return { items: [], total: 0 };
+            }
             return thunkAPI.rejectWithValue(error.message)
         }
     }

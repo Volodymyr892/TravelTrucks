@@ -1,22 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom"
 import { fetchCamper } from "../../redux/Catalog/operationsCatalog";
 import picture from "../../assets/Picture.jpg"
 import css from "./HomePage.module.css"
+import {Loader} from "../../components/Loader/Loader";
 
 export default function HomePage() {
-    const dispatch =  useDispatch()
+    const dispatch =  useDispatch();
+    const [loading, setLoading] = useState(true); 
+
     useEffect(() => {
-        
+        setTimeout(() => setLoading(false), 3000);
         dispatch(fetchCamper());
     }, [dispatch]);
+
     const navigate = useNavigate();
+
     const handleClick =()=>{
         navigate('/catalog')
     }
+
     return (
-    <div className={css.container} >
+    loading ? <Loader/> : (<div className={css.container} >
         <img  className={css.img}
         src={picture}
         alt="image"
@@ -30,6 +36,6 @@ export default function HomePage() {
             </div>
             <button className={css.button} type="submit" onClick={handleClick}>View Now</button>
         </div>
-    </div>
+    </div>)
     )
 }

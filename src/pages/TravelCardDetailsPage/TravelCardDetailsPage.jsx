@@ -21,18 +21,20 @@ export default function TravelCardDetailsPage() {
             <ul className={css.list}>
                 <li>
                     <NavLink 
-                    className={css.item} 
+                    className={({ isActive }) => isActive ? `${css.item} ${css.active}` : css.item} 
                     to="features"
                     end
                     >Features</NavLink>
                 </li>
                 <li>
-                    <NavLink className={css.item} to="reviews">Reviews</NavLink>
+                    <NavLink 
+                    className={({ isActive }) => isActive ? `${css.item} ${css.active}` : css.item} 
+                    to="reviews"
+                    >Reviews</NavLink>
                 </li>
             </ul>
             <hr className={css.line}/>
             <Outlet/>
-            {/* <Form/> */}
     </div>
     )
 }

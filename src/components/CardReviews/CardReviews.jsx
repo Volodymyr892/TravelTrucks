@@ -18,10 +18,10 @@ export default function CardReviews() {
         dispatch(idCemper(id))
     },[id, dispatch])
 
+    //* відображення рейтингу в зірочках 
     const renderStars = (rating)=>{
         const totalStars = 5;
         const stars = [];
-
         for (let i = 0; i < totalStars; i++) {
             if (i<rating) {
                 stars.push(<img key={i} src={star}/>)
@@ -31,6 +31,7 @@ export default function CardReviews() {
         }
         return stars;
     }
+
     return(
         <div className={css.position}>
             <div>
@@ -39,7 +40,9 @@ export default function CardReviews() {
                 { camper.reviews.map((review)=>(
                 <li className={css.item} key={review.reviewer_name}>
                     <div className={css.nameStar}>
-                        <p className={css.oneB}>{review.reviewer_name.length > 1 ? review.reviewer_name.slice(0, 1) + " " : review.reviewer_name}</p>
+                        <p className={css.oneB}>{
+                        review.reviewer_name.length > 1 ? review.reviewer_name.slice(0, 1) + " " : review.reviewer_name
+                        }</p>
                         <div>
                             <h3 className={css.name}>{review.reviewer_name}</h3>
                             <span aria-hidden="true">{renderStars(review.reviewer_rating)}</span>
@@ -51,7 +54,9 @@ export default function CardReviews() {
             </ul>
             )}
             </div>
-            <div><Form/></div>
+            <div>
+                <Form/>
+            </div>
         </div>
     )
 }

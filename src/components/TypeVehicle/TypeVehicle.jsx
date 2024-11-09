@@ -11,7 +11,7 @@ export default function TypeVehicle({onChange, selectedValues}) {
         { value: 'alcove', label: 'Alcove', icon: alcove},
       ];
 
-      
+      //*Oбробляє зміну вибору
       const handleRadioChange = (e) => {
         const { value } = e.target;
         setCheckedItems(value);

@@ -1,9 +1,22 @@
 import star from "../../assets/star.svg"
 import location from "../../assets/location.svg"
 import css from "./CamperDetails.module.css"
+import { useEffect, useState } from "react";
+import {Loader} from "../Loader/Loader";
+
 export default function CamperDetails({camper}) {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+                setLoading(false);  
+        }, 4000); 
+        return () => clearTimeout(timer);
+    }, [camper]);  
+
+    
     return(
-        <ul>
+        (loading) ? (<Loader/>) :  (<ul>
             <li className={css.listOne}>
                 <ul className={css.listTitle}>
                     <li className={css.name}>{camper.name}</li>
@@ -36,6 +49,6 @@ export default function CamperDetails({camper}) {
             <li className={css.description}>
                 <p className={css.desc}>{camper.description}</p>
             </li>
-        </ul>
+        </ul>)
     )
 }

@@ -7,6 +7,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff; /* Білий прозорий фон */
-    z-index: 9999; /* Робить лоадер зверху всіх елементів */
+    background-color: #ffffff; 
+    z-index: 9999; 
+}
+.loaderContainerBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: #ffffff; 
 }

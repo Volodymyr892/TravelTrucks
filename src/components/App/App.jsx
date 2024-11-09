@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import Navigation from "../Navigation/Navigation";
+import { Loader } from "../Loader/Loader";
 
 const HomePage = lazy(()=>import('../../pages/HomePage/HomePage'))
 const TravelCardsPage = lazy(()=> import('../../pages/TracelCadsPage/TravelCardsPage'))
@@ -15,12 +16,12 @@ export default function App() {
     <div>
       <Navigation/>
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/catalog" element={<TravelCardsPage/>}/>
           <Route path="/catalog/:id" element={<TravelCardDetailsPage/>}>
-             <Route index element={<CardFeature />} /> {/* Це задає маршрут для Features за замовчуванням */}
+             <Route index element={<CardFeature />} />  ?/*Це задає маршрут для Features за замовчуванням
              <Route path="features" element={<CardFeature/>}/>
              <Route path="reviews" element={<CardReviews/>}/>
           </Route>

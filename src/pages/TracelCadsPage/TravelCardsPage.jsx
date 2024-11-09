@@ -2,26 +2,23 @@ import { useEffect, useState } from "react";
 import CampersList from "../../components/CampersList/CampersList";
 import FilterList from "../../components/FilterList/FilterList";
 import css from "./TravelCardsPage.module.css"
-import Loader from "../../components/Loader/Loader";
+import {Loader} from "../../components/Loader/Loader";
 
 
 export default function TravelCardsPage() {
     const [filter, isSetFilter] = useState(null);
     const  [loading, setLoading] = useState(true);
     useEffect(() => {
-        // Вимикаємо лоадер після того, як компонент змонтується
         setTimeout(() => {
             setLoading(false);
-        }, 2000); // Налаштовуємо затримку для імітації завантаження
+        }, 5000); 
     }, []);
-
     const handleSearch = (newFilters)=>{
         setLoading(true); 
         isSetFilter(newFilters);
-
         setTimeout(() => {
-            setLoading(false); // Вимикаємо лоадер після отримання результатів
-        }, 2000); 
+            setLoading(false); 
+        }, 3000); 
     }
 
     return(

@@ -20,6 +20,8 @@ export default function CardFeature() {
     const {id} = useParams()
     const dispatch = useDispatch()
     const camper = useSelector(selectSelectedCamper);
+
+    //* Перетворення першої літери на велику бо з бекенду приходить маленька 
     function capitalizeFirstLetter (string){
         if (!string) return ''; 
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -28,67 +30,68 @@ export default function CardFeature() {
     useEffect(()=>{
         dispatch(idCemper(id))
     },[id, dispatch])
+
     return(
         <div className={css.position}>
             <div className={css.container}>
                 <ul className={css.characters}>
                         <li className={css.charact}>
                             <div className={css.iconCharacter}>
-                                <img className={css.iconCharact} src={automatic} alt="" />
+                                <img className={css.iconCharact} src={automatic} alt="automatic" />
                                 <p className={css.namecharacter}>{capitalizeFirstLetter(camper.transmission)}</p>
                             </div>
                         </li>
                         <li className={css.charact}>
                             <div className={css.iconCharacter}>
-                                <img className={css.iconCharact} src={pump} alt="" />
+                                <img className={css.iconCharact} src={pump} alt="pump" />
                                 <p className={css.namecharacter}>{capitalizeFirstLetter(camper.engine)}</p>
                             </div>
                         </li>
                         {camper.kitchen && <li  className={css.charact}>
                             <div className={css.iconCharacter}>
-                                <img className={css.iconCharact} src={kitchen} alt="" />
+                                <img className={css.iconCharact} src={kitchen} alt="kitchen" />
                                 <p className={css.namecharacter}>Kitchen</p>
                             </div>
                         </li>}
                         {camper.AC && <li  className={css.charact}>
                             <div className={css.iconCharacter}>
-                                <img className={css.iconCharact} src={ac} alt="" />
+                                <img className={css.iconCharact} src={ac} alt="ac" />
                                 <p className={css.namecharacter}>AC</p>
                             </div>
                         </li>}
                         {camper.radio && <li  className={css.charact}>
                         <div className={css.iconCharacter}>
-                            <img className={css.iconCharact} src={radio} alt="" />
+                            <img className={css.iconCharact} src={radio} alt="radio" />
                             <p className={css.namecharacter}>Radio</p>
                         </div>
                         </li>}
                         {camper.bathroom && <li  className={css.charact}>
                         <div className={css.iconCharacter}>
-                            <img className={css.iconCharact} src={bathroom} alt="" />
+                            <img className={css.iconCharact} src={bathroom} alt="bathroom" />
                             <p className={css.namecharacter}>Bathroom</p>
                         </div>
                         </li>}
                         {camper.refrigerator && <li  className={css.charact}>
                         <div className={css.iconCharacter}>
-                            <img className={css.iconCharact} src={refrigerator} alt="" />
+                            <img className={css.iconCharact} src={refrigerator} alt="refrigerator" />
                             <p className={css.namecharacter}>Refrigerator</p>
                         </div>
                         </li>}
                         {camper.microwave && <li  className={css.charact}>
                         <div className={css.iconCharacter}>
-                            <img className={css.iconCharact} src={microwave} alt="" />
+                            <img className={css.iconCharact} src={microwave} alt="microwave" />
                             <p className={css.namecharacter}>Microwave</p>
                         </div>
                         </li>}
                         {camper.gas && <li  className={css.charact}>
                         <div className={css.iconCharacter}>
-                            <img className={css.iconCharact} src={gas} alt="" />
+                            <img className={css.iconCharact} src={gas} alt="gas" />
                             <p className={css.namecharacter}>Gas</p>
                         </div>
                         </li>}
                         {camper.water && <li  className={css.charact}>
                         <div className={css.iconCharacter}>
-                            <img className={css.iconCharact} src={water} alt="" />
+                            <img className={css.iconCharact} src={water} alt="water" />
                             <p className={css.namecharacter}>Water</p>
                         </div>
                         </li>}
@@ -124,7 +127,9 @@ export default function CardFeature() {
                     </ul>
                 </div>
             </div>
-            <div><Form/></div>
+            <div>
+                <Form/>
+            </div>
         </div>
     )
 }

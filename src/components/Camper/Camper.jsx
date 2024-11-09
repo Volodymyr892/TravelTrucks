@@ -32,12 +32,11 @@ export default function Camper({camper}) {
         } else {
             added.push(camper.id);
         }
-
         localStorage.setItem("added", JSON.stringify(added));
-
         setIsAdd(!isAdd);
     }
     const firstImage =  camper.gallery[0] ? camper.gallery[0].thumb : null;
+    const description = camper.description.length > 64 ? camper.description.slice(0, 63) + "..." : camper.description
 
     return(
         <div className={css.camper}>
@@ -69,7 +68,7 @@ export default function Camper({camper}) {
                         </li>
                     </ul>
                 </div>
-                <p className={css.description}>{camper.description.length > 64 ? camper.description.slice(0, 63) + "..." : camper.description}</p>
+                <p className={css.description}>{description}</p>
                 <ul className={css.characters}>
                      <li className={css.charact}>
                        <div className={css.iconCharacter}>

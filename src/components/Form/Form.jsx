@@ -19,7 +19,7 @@ export default function Form() {
     const {name, value} =e.target;
     setForm((data)=>({
         ...data,
-        [name]:value
+        [name]: name === "comment" ? value : value.trim()
     }));
   };
 

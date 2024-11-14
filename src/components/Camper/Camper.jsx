@@ -44,9 +44,9 @@ export default function Camper({camper}) {
             <div>
                 <div>
                     <ul className={css.title}>
-                        <li className={css.name}>{camper.name}</li>
+                        <h2 className={css.name}>{camper.name}</h2>
                         <div className={css.prise}>
-                            <li className={css.priceNumber}>€{camper.price}.00</li>
+                            <li className={css.priceNumber}>€{camper.price.toFixed(2)}</li>
                             <li>
                                 <button 
                                 className={css.buttonHeart}

@@ -14,8 +14,10 @@ export default function TypeVehicle({onChange, selectedValues}) {
       //*Oбробляє зміну вибору
       const handleRadioChange = (e) => {
         const { value } = e.target;
-        setCheckedItems(value);
-        onChange({ target: { value, checked: true } }); 
+        const newValue = checkedItem === value ? "" : value;
+
+        setCheckedItems(newValue);
+        onChange({ target: { value: newValue, checked: !!newValue } });
     };
 
     return(
@@ -30,6 +32,7 @@ export default function TypeVehicle({onChange, selectedValues}) {
                 type="radio"
                 value={type.value}
                 onChange={handleRadioChange}
+                onClick={() => handleRadioChange({ target: { value: type.value } })}
                 checked={checkedItem === type.value}
                 className={css.input}
                 />

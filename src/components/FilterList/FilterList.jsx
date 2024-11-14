@@ -31,7 +31,7 @@ export default function FilterList({onSearch}) {
     }, [islocation, isVehicle, isType]);
 
     //* Oтримує нове значення з Location
-    const handleLocationChange = e => isSetLocation(e.target.value);
+    const handleLocationChange = e => isSetLocation(e.target.value.trim());
     
     //* Отримує нове значення з Vehicle Filters
     const handleVehicleChange = e =>{

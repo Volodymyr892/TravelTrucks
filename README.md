@@ -1,13 +1,12 @@
-# Назва проєкту
+# Project Name
 TravelTrucks
+This project is a camper rental platform that allows users to browse vehicles, filter them by features, view details, and make bookings.
 
-Цей проєкт представляє собою платформу для оренди кемперів, що дозволяє користувачам переглядати транспортні засоби, фільтрувати за характеристиками, переглядати деталі та робити бронювання
+# Key Features
+- **Browse Campers**: Users can browse all available vehicles on the homepage and load more by clicking the "Load More" button.
+- **Filtering and Sorting**: The ability to filter vehicles by location, type, equipment (e.g., air conditioning, kitchen), and select specific categories (e.g., "Van", "Fully Integrated").
+- **Vehicle Detail Page**: Each vehicle has its own page with additional information, where users can view all specifications and reviews, as well as a booking form for campers.
+- **Favorites**: Allows users to save their favorite vehicles.
+- **Booking**: Users can fill out a booking form for their chosen vehicle.
+- **Data Storage**: The list of favorite vehicles and booking information is saved in localStorage.
 
-## Основні функції
-
-- **Перегляд кемперів**: Користувачі можуть переглядати всі доступні транспортні засоби на головній сторінці. Та довантажувати їх по кліку на кнопку Load more
-- **Фільтрація та сортування**: Можливість фільтрувати транспортні засоби за місцем знаходження типом, обладнанням (кондиціонер, кухня тощо), а також вибирати лише певні категорії (наприклад, "Van", "Fully Integrated").
-- **Сторінка деталей транспортного засобу**: Кожен транспортний засіб має свою сторінку з додатковою інформацією, де можна переглянути всі характеристики та відгуки. Та форму для бронювання кемперів
-- **Функція "Обране"**: Дозволяє зберігати улюблені транспортні засоби.
-- **Бронювання**: Користувачі можуть заповнити форму для бронювання обраного транспортного засобу.
-- **Збереження даних**: Список обраних транспортних засобів та інформація про бронювання зберігається в localStorage.
